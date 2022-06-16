@@ -25,15 +25,7 @@ jobs:
         # to be the length of the shard array.
         shard: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
         totalShards: [20]
-    needs: [build-core]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: ./.github/workflows/actions/test-core-screenshot
-        with:
-          shard: ${{ matrix.shard }}
-          totalShards: ${{ matrix.totalShards }}
-          update: true
+
 
   update-reference-screenshots:
     runs-on: ubuntu-latest
